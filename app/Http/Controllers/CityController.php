@@ -53,6 +53,5 @@ class  CityController extends Controller
            $city->zipCodes;
         }
         return response()->json($city);
-        
     }
 }
