@@ -19,20 +19,16 @@ class Office extends Model implements AuthenticatableContract, AuthorizableContr
      * @var array
      */
 
-    protected $fillable = ['name', 'city_id'];
+    protected $fillable = ['name', 'address','city_id', 'zip_code_id'];
 
 
-    public function users()
+    public function agents()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Agent::class);
     }
-    public function city()
+    public function zipCodes()
     {
-        return $this->belongsTo(City::class);
-    }
-    public function address()
-    {
-        return $this->hasOne(Address::class);
+        return $this->belongsTo(ZipCode::class);
     }
     /**
      * The attributes excluded from the model's JSON form.

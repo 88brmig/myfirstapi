@@ -10,7 +10,7 @@ class  AgentController extends Controller
 {
 
     //create new agent
-    public function createUser(Request $request)
+    public function createAgent(Request $request)
     {
         $agent = Agent::create($request->all());
         return response()->json($agent);
@@ -49,7 +49,7 @@ class  AgentController extends Controller
     //list agents
     public function index()
     {
-        $agent = Agent::all();
+        $agent = Agent::with(['offices', 'categories'])->get()->all();
         return response()->json($agent);
     }
 }

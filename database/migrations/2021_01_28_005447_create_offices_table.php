@@ -11,16 +11,18 @@ class CreateOfficesTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('address_id')->nullable();
-            $table->unsignedBigInteger('city_id')->required()->nullable();
+            $table->text('address')->default('set null');
+            $table->unsignedBigInteger('city_id')->required();
+            $table->unsignedBigInteger('zip_code_id');
 
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('set null');
-            $table->foreign('address_id')->references('id')->on('addresses')->onDelete('set null');
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('zip_code_id')->references('id')->on('zip_codes');
 
             $table->timestamps();
         });

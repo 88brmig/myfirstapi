@@ -47,7 +47,10 @@ class  OfficeController extends Controller
     //list offices
     public function index()
     {
-        $office = Office::all();
+        $offices = Office::all();
+        foreach ($offices as $office) {
+           $office->agents;
+        }
         return response()->json($office);
     }
 }

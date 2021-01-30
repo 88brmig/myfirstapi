@@ -19,12 +19,12 @@ class City extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','state'];
 
 
-    public function offices()
+    public function zipCodes()
     {
-        return $this->hasMany(Office::class);
+        return $this->hasMany(ZipCode::class);
     }
     /**
      * The attributes excluded from the model's JSON form.

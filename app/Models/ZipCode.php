@@ -19,14 +19,14 @@ class ZipCode extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
 
-    protected $fillable = ['zip_code'];
+    protected $fillable = ['zip_code', 'city_id'];
 
 
     public function offices()
     {
         return $this->hasMany(Office::class);
     }
-    
+
     public function cities()
     {
         return $this->belongsTo(ZipCode::class);

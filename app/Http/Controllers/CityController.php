@@ -22,6 +22,7 @@ class  CityController extends Controller
     {
         $city = City::find($id);
         $city->name = $request->input('name');
+        $city->name = $request->input('state');
         $city->save();
         return response()->json($city);
     }
@@ -47,7 +48,11 @@ class  CityController extends Controller
     //list cities
     public function index()
     {
-        $city = City::all();
+        $cities = City::all();
+        foreach ($cities as $city) {
+           $city->zipCodes;
+        }
         return response()->json($city);
+        
     }
 }

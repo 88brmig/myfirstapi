@@ -34,7 +34,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('offices/add', 'OfficeController@createOffice');
     //the route below is for viewing one office
     $router->get('offices/view/{id}', 'OfficeController@viewOffice');
-    //the route below is for updating the information of a office
+    //the route below is for updating the information of an office
     $router->put('offices/edit/{id}', 'OfficeController@updateOffice');
     //the route below is for deleting an office from the database
     $router->delete('offices/delete/{id}', 'OfficeController@deleteOffice');
@@ -52,17 +52,18 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     //the route below is for viewing all cities
     $router->get('cities/index', 'CityController@index');
 
-    //the route below is for creating a new category
-    $router->post('addresses/add', 'AddressController@createAddress');
-    //the route below is for viewing one category
-    $router->get('addresses/view/{id}', 'AddressController@viewAddress');
-    //the route below is for updating the information of a category
-    $router->put('addresses/edit/{id}', 'AddressController@updateAddress');
-    //the route below is for deleting a category from the database
-    $router->delete('addresses/delete/{id}', 'AddressController@deleteAddress');
-    //the route below is for viewing all categories
-    $router->get('addresses/index', 'AddressController@index');
+    //the route below is for creating a new zip codes
+    $router->post('zips/add', 'ZipController@createZip');
+    //the route below is for viewing one zip code
+    $router->get('zips/view/{id}', 'ZipController@viewZip');
+    //the route below is for updating the information of a zip code
+    $router->put('zips/edit/{id}', 'ZipController@updateZip');
+    //the route below is for deleting a zip code from the database
+    $router->delete('zips/delete/{id}', 'ZipController@deleteZip');
+    //the route below is for viewing all zip codes
+    $router->get('zips/index', 'ZipController@index');
 
+    //the route below is for creating a new category
     $router->post('categories/add', 'CategoryController@createCategory');
     //the route below is for viewing one category
     $router->get('categories/view/{id}', 'CategoryController@viewCategory');

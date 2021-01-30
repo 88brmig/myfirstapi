@@ -17,7 +17,7 @@ class CreateAgentsTable extends Migration
             $table->id();
             $table->string('first_name')->required();
             $table->string('last_name')->required();
-            $table->bigInteger('phone');
+            $table->bigInteger('phone')->unique();
             $table->string('email_address')->required();
             $table->unsignedBigInteger('office_id')->required();
             $table->unsignedBigInteger('category_id')->nullable();
