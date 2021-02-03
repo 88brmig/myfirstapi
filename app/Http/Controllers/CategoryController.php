@@ -48,6 +48,9 @@ class  CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
+        foreach ($category as $category) {
+           $category->agents;
+        }
         return response()->json($category);
     }
 }

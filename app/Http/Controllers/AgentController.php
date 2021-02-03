@@ -49,7 +49,11 @@ class  AgentController extends Controller
     //list agents
     public function index()
     {
-        $agent = Agent::with(['offices', 'categories'])->get()->all();
+        $agents = Agent::all();
+        foreach ($agents as $agent) {
+           $agent->category;
+           $agent->office;
+        }
         return response()->json($agent);
     }
 }

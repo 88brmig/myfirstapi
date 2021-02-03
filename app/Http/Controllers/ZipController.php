@@ -48,7 +48,10 @@ class  ZipController extends Controller
     //list cities
     public function index()
     {
-        $zip = ZipCode::all();
-        return response()->json($zip);
+        $zipCode = ZipCode::all();
+        foreach ($zipCode as $zipCode) {
+           $zipCode->offices;
+        }
+        return response()->json($zipCode);
     }
 }

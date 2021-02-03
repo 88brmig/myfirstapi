@@ -22,9 +22,9 @@ class Category extends Model implements AuthenticatableContract, AuthorizableCon
     protected $fillable = ['category'];
 
 
-    public function users()
+    public function agents()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Agent::class);
     }
     /**
      * The attributes excluded from the model's JSON form.

@@ -32,7 +32,7 @@ class Agent extends Model implements AuthenticatableContract, AuthorizableContra
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function office()
